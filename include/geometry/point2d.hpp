@@ -97,6 +97,58 @@ class Point2D {
    */
   [[nodiscard]] auto GetY() const -> double;
 
+  /**
+   * @brief Add coordinates of another Point2D object to this object
+   * @param other Point2D object
+   * @return Sum of the two Point2D objects
+   */
+  auto operator+(const Point2D& other) const -> Point2D;
+  /**
+   * @brief Subtract coordinates of another Point2D object from this object
+   * @param other Point2D object
+   * @return Difference between the two Point2D objects
+   */
+  auto operator-(const Point2D& other) const -> Point2D;
+  /**
+   * @brief Add coordinates of another Point2D to this Point2D and modify the current object
+   * @param other Point2D object to add
+   * @return Point2D& Modified current Point2D object
+   */
+  auto operator+=(const Point2D& other) -> Point2D&;
+  /**
+   * @brief Subtract coordinates of another Point2D from this Point2D and modify the current object
+   * @param other Point2D object to subtract.
+   * @return Point2D& Modified current Point2D object
+   */
+  auto operator-=(const Point2D& other) -> Point2D&;
+  /**
+   * @brief Multiply coordinates of this Point2D by a scalar
+   * @param scalar Value to multiply
+   * @return Point2D Multiplied coordinates
+   */
+  auto operator*(double scalar) const -> Point2D;
+  /**
+   * @brief Divide coordinates of this Point2D by a scalar
+   * @param scalar Value to devide
+   * @return Point2D Devided coordinates
+   */
+  auto operator/(double scalar) const -> Point2D;
+  /**
+   * @brief Compare two Point2D objects for equality
+   * @param other Point2D object to compare
+   * @return true if the two Point2D objects are equal
+   * @return false otherwise
+   */
+  auto operator==(const Point2D& other) const -> bool;
+  /**
+   * @brief Compare two Point2D objects for inequality
+   * @param other Point2D object to compare
+   * @return true if the two Point2D objects are not equal
+   * @return false otherwise
+   */
+  auto operator!=(const Point2D& other) const -> bool;
+
+
 };
 
 } // namespace programmers::geometry
