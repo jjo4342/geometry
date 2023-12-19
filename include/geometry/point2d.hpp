@@ -61,9 +61,9 @@ class Point2D {
   auto operator=(Point2D&& other) -> Point2D& = default;
 
   /**
-   * @brief Calculate distance between current point and target point
+   * @brief Calculate distance between this point and target point
    * @param target Other Point2D object to calculate distance
-   * @return double Distance between current point and target point
+   * @return double Distance between this point and target point
    */
   auto CalculateDistance(const Point2D& target) const -> double;
   /**
@@ -75,6 +75,27 @@ class Point2D {
   [[nodiscard]] static auto CalculateDistance(const Point2D& lhs,
                                               const Point2D& rhs) -> double;
 
+  /**
+   * @brief Set x coordinate value
+   * @param x Double type input x coordinate value
+   */
+  void SetX(double x);
+  /**
+   * @brief Set y coordinate value
+   * @param y Double type input  coordinate value
+   */
+  void SetY(double y);
+
+  /**
+   * @brief Get x coordinate value of this point
+   * @return double x coordinate value of this point
+   */
+  [[nodiscard]] auto GetX() const -> double;
+  /**
+   * @brief Get y coordinate value of this point
+   * @return double y coordinate value of this point
+   */
+  [[nodiscard]] auto GetY() const -> double;
 
 };
 
