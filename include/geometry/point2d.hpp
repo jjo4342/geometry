@@ -46,6 +46,20 @@ class Point2D {
    * @brief Destroy Point2D object
    */
   virtual ~Point2D() = default;
+  
+  /**
+   * @brief Copy assignment operator
+   * @param other Point2D object
+   * @return Point2D& Reference of Point2D object
+   */
+  auto operator=(const Point2D& other) -> Point2D& = default;
+  /**
+   * @brief Move assignment operator
+   * @param other Point2D object
+   * @return Point2D& Reference of Point2D object
+   */
+  auto operator=(Point2D&& other) -> Point2D& = default;
+
 
 };
 
