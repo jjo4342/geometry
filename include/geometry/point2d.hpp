@@ -148,7 +148,10 @@ class Point2D {
    */
   auto operator!=(const Point2D& other) const -> bool;
 
-
+protected:
+private:
+  double x_{0.0};  ///< x coordinate
+  double y_{0.0};  ///< y coordinate
 };
 
 } // namespace programmers::geometry
