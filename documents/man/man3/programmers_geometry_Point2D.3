@@ -1,0 +1,401 @@
+.TH "programmers::geometry::Point2D" 3 "Wed Dec 20 2023" "cpp_general_framework" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+programmers::geometry::Point2D \- \fBPoint2D\fP class with 2-dimensoin\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <point2d\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPoint2D\fP ()=default"
+.br
+.RI "Construct New \fBPoint2D\fP object\&. "
+.ti -1c
+.RI "\fBPoint2D\fP (double x, double y)"
+.br
+.RI "Construct New \fBPoint2D\fP object with x, y value\&. "
+.ti -1c
+.RI "\fBPoint2D\fP (const \fBPoint2D\fP &other)=default"
+.br
+.RI "Copy New \fBPoint2D\fP object with other \fBPoint2D\fP object\&. "
+.ti -1c
+.RI "\fBPoint2D\fP (\fBPoint2D\fP &&other) noexcept=default"
+.br
+.RI "Move New \fBPoint2D\fP object with other \fBPoint2D\fP object\&. "
+.ti -1c
+.RI "virtual \fB~Point2D\fP ()=default"
+.br
+.RI "Destroy \fBPoint2D\fP object\&. "
+.ti -1c
+.RI "auto \fBoperator=\fP (const \fBPoint2D\fP &other) \-> \fBPoint2D\fP &=default"
+.br
+.RI "Copy assignment operator\&. "
+.ti -1c
+.RI "auto \fBoperator=\fP (\fBPoint2D\fP &&other) \-> \fBPoint2D\fP &=default"
+.br
+.RI "Move assignment operator\&. "
+.ti -1c
+.RI "auto \fBCalculateDistance\fP (const \fBPoint2D\fP &target) const \-> double"
+.br
+.RI "Calculate distance between this point and target point\&. "
+.ti -1c
+.RI "void \fBSetX\fP (double x)"
+.br
+.RI "Set x coordinate value\&. "
+.ti -1c
+.RI "void \fBSetY\fP (double y)"
+.br
+.RI "Set y coordinate value\&. "
+.ti -1c
+.RI "auto \fBGetX\fP () const \-> double"
+.br
+.RI "Get x coordinate value of this point\&. "
+.ti -1c
+.RI "auto \fBGetY\fP () const \-> double"
+.br
+.RI "Get y coordinate value of this point\&. "
+.ti -1c
+.RI "auto \fBoperator+\fP (const \fBPoint2D\fP &other) const \-> \fBPoint2D\fP"
+.br
+.RI "Add coordinates of another \fBPoint2D\fP object to this object\&. "
+.ti -1c
+.RI "auto \fBoperator\-\fP (const \fBPoint2D\fP &other) const \-> \fBPoint2D\fP"
+.br
+.RI "Subtract coordinates of another \fBPoint2D\fP object from this object\&. "
+.ti -1c
+.RI "auto \fBoperator+=\fP (const \fBPoint2D\fP &other) \-> \fBPoint2D\fP &"
+.br
+.RI "Add coordinates of another \fBPoint2D\fP to this \fBPoint2D\fP and modify the current object\&. "
+.ti -1c
+.RI "auto \fBoperator\-=\fP (const \fBPoint2D\fP &other) \-> \fBPoint2D\fP &"
+.br
+.RI "Subtract coordinates of another \fBPoint2D\fP from this \fBPoint2D\fP and modify the current object\&. "
+.ti -1c
+.RI "auto \fBoperator*\fP (double scalar) const \-> \fBPoint2D\fP"
+.br
+.RI "Multiply coordinates of this \fBPoint2D\fP by a scalar\&. "
+.ti -1c
+.RI "auto \fBoperator/\fP (double scalar) const \-> \fBPoint2D\fP"
+.br
+.RI "Divide coordinates of this \fBPoint2D\fP by a scalar\&. "
+.ti -1c
+.RI "auto \fBoperator==\fP (const \fBPoint2D\fP &other) const \-> bool"
+.br
+.RI "Compare two \fBPoint2D\fP objects for equality\&. "
+.ti -1c
+.RI "auto \fBoperator!=\fP (const \fBPoint2D\fP &other) const \-> bool"
+.br
+.RI "Compare two \fBPoint2D\fP objects for inequality\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static auto \fBCalculateDistance\fP (const \fBPoint2D\fP &lhs, const \fBPoint2D\fP &rhs) \-> double"
+.br
+.RI "Calculate distance between lhs point and rhs point\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBPoint2D\fP class with 2-dimensoin\&. 
+.PP
+Definition at line 21 of file point2d\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "programmers::geometry::Point2D::Point2D ()\fC [default]\fP"
+
+.PP
+Construct New \fBPoint2D\fP object\&. 
+.SS "programmers::geometry::Point2D::Point2D (double x, double y)"
+
+.PP
+Construct New \fBPoint2D\fP object with x, y value\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP Double type x coordinate value 
+.br
+\fIy\fP Double type y coordinate value 
+.RE
+.PP
+
+.SS "programmers::geometry::Point2D::Point2D (const \fBPoint2D\fP & other)\fC [default]\fP"
+
+.PP
+Copy New \fBPoint2D\fP object with other \fBPoint2D\fP object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIother\fP \fBPoint2D\fP object 
+.RE
+.PP
+
+.SS "programmers::geometry::Point2D::Point2D (\fBPoint2D\fP && other)\fC [default]\fP, \fC [noexcept]\fP"
+
+.PP
+Move New \fBPoint2D\fP object with other \fBPoint2D\fP object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIother\fP \fBPoint2D\fP object 
+.RE
+.PP
+
+.SS "virtual programmers::geometry::Point2D::~Point2D ()\fC [virtual]\fP, \fC [default]\fP"
+
+.PP
+Destroy \fBPoint2D\fP object\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "auto programmers::geometry::Point2D::CalculateDistance (const \fBPoint2D\fP & target) const \->  double"
+
+.PP
+Calculate distance between this point and target point\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItarget\fP Other \fBPoint2D\fP object to calculate distance 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+double Distance between this point and target point 
+.RE
+.PP
+
+.SS "static auto programmers::geometry::Point2D::CalculateDistance (const \fBPoint2D\fP & lhs, const \fBPoint2D\fP & rhs) \->  double\fC [static]\fP"
+
+.PP
+Calculate distance between lhs point and rhs point\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlhs\fP Left hand side \fBPoint2D\fP object 
+.br
+\fIrhs\fP Right hand side \fBPoint2D\fP object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+double Distance between lhs point and rhs point 
+.RE
+.PP
+
+.SS "auto programmers::geometry::Point2D::GetX () const \->  double"
+
+.PP
+Get x coordinate value of this point\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+double x coordinate value of this point 
+.RE
+.PP
+
+.SS "auto programmers::geometry::Point2D::GetY () const \->  double"
+
+.PP
+Get y coordinate value of this point\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+double y coordinate value of this point 
+.RE
+.PP
+
+.SS "auto programmers::geometry::Point2D::operator!= (const \fBPoint2D\fP & other) const \->  bool"
+
+.PP
+Compare two \fBPoint2D\fP objects for inequality\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIother\fP \fBPoint2D\fP object to compare 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if the two \fBPoint2D\fP objects are not equal 
+.PP
+false otherwise 
+.RE
+.PP
+
+.SS "auto programmers::geometry::Point2D::operator* (double scalar) const \->  \fBPoint2D\fP"
+
+.PP
+Multiply coordinates of this \fBPoint2D\fP by a scalar\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIscalar\fP Value to multiply 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBPoint2D\fP Multiplied coordinates 
+.RE
+.PP
+
+.SS "auto programmers::geometry::Point2D::operator+ (const \fBPoint2D\fP & other) const \->  \fBPoint2D\fP"
+
+.PP
+Add coordinates of another \fBPoint2D\fP object to this object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIother\fP \fBPoint2D\fP object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Sum of the two \fBPoint2D\fP objects 
+.RE
+.PP
+
+.SS "auto programmers::geometry::Point2D::operator+= (const \fBPoint2D\fP & other) \->  \fBPoint2D\fP &"
+
+.PP
+Add coordinates of another \fBPoint2D\fP to this \fBPoint2D\fP and modify the current object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIother\fP \fBPoint2D\fP object to add 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBPoint2D\fP& Modified current \fBPoint2D\fP object 
+.RE
+.PP
+
+.SS "auto programmers::geometry::Point2D::operator\- (const \fBPoint2D\fP & other) const \->  \fBPoint2D\fP"
+
+.PP
+Subtract coordinates of another \fBPoint2D\fP object from this object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIother\fP \fBPoint2D\fP object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Difference between the two \fBPoint2D\fP objects 
+.RE
+.PP
+
+.SS "auto programmers::geometry::Point2D::operator\-= (const \fBPoint2D\fP & other) \->  \fBPoint2D\fP &"
+
+.PP
+Subtract coordinates of another \fBPoint2D\fP from this \fBPoint2D\fP and modify the current object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIother\fP \fBPoint2D\fP object to subtract\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBPoint2D\fP& Modified current \fBPoint2D\fP object 
+.RE
+.PP
+
+.SS "auto programmers::geometry::Point2D::operator/ (double scalar) const \->  \fBPoint2D\fP"
+
+.PP
+Divide coordinates of this \fBPoint2D\fP by a scalar\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIscalar\fP Value to devide 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBPoint2D\fP Devided coordinates 
+.RE
+.PP
+
+.SS "auto programmers::geometry::Point2D::operator= (const \fBPoint2D\fP & other) \->  \fBPoint2D\fP &=default\fC [default]\fP"
+
+.PP
+Copy assignment operator\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIother\fP \fBPoint2D\fP object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBPoint2D\fP& Reference of \fBPoint2D\fP object 
+.RE
+.PP
+
+.SS "auto programmers::geometry::Point2D::operator= (\fBPoint2D\fP && other) \->  \fBPoint2D\fP &=default\fC [default]\fP"
+
+.PP
+Move assignment operator\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIother\fP \fBPoint2D\fP object 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBPoint2D\fP& Reference of \fBPoint2D\fP object 
+.RE
+.PP
+
+.SS "auto programmers::geometry::Point2D::operator== (const \fBPoint2D\fP & other) const \->  bool"
+
+.PP
+Compare two \fBPoint2D\fP objects for equality\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIother\fP \fBPoint2D\fP object to compare 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if the two \fBPoint2D\fP objects are equal 
+.PP
+false otherwise 
+.RE
+.PP
+
+.SS "void programmers::geometry::Point2D::SetX (double x)"
+
+.PP
+Set x coordinate value\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP Double type input x coordinate value 
+.RE
+.PP
+
+.SS "void programmers::geometry::Point2D::SetY (double y)"
+
+.PP
+Set y coordinate value\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIy\fP Double type input coordinate value 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for cpp_general_framework from the source code\&.
