@@ -1,4 +1,4 @@
-.TH "programmers::geometry::Point2D" 3 "Wed Dec 20 2023" "cpp_general_framework" \" -*- nroff -*-
+.TH "programmers::geometry::Point2D" 3 "Fri Dec 22 2023" "cpp_general_framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -125,6 +125,8 @@ Construct New \fBPoint2D\fP object with x, y value\&.
 .RE
 .PP
 
+.PP
+Definition at line 18 of file point2d\&.cpp\&.
 .SS "programmers::geometry::Point2D::Point2D (const \fBPoint2D\fP & other)\fC [default]\fP"
 
 .PP
@@ -153,7 +155,7 @@ Move New \fBPoint2D\fP object with other \fBPoint2D\fP object\&.
 Destroy \fBPoint2D\fP object\&. 
 .SH "Member Function Documentation"
 .PP 
-.SS "auto programmers::geometry::Point2D::CalculateDistance (const \fBPoint2D\fP & target) const \->  double"
+.SS "auto programmers::geometry::Point2D::CalculateDistance (const \fBPoint2D\fP & target) const \-> double"
 
 .PP
 Calculate distance between this point and target point\&. 
@@ -169,7 +171,9 @@ double Distance between this point and target point
 .RE
 .PP
 
-.SS "static auto programmers::geometry::Point2D::CalculateDistance (const \fBPoint2D\fP & lhs, const \fBPoint2D\fP & rhs) \->  double\fC [static]\fP"
+.PP
+Definition at line 20 of file point2d\&.cpp\&.
+.SS "auto programmers::geometry::Point2D::CalculateDistance (const \fBPoint2D\fP & lhs, const \fBPoint2D\fP & rhs) \-> double\fC [static]\fP"
 
 .PP
 Calculate distance between lhs point and rhs point\&. 
@@ -187,7 +191,9 @@ double Distance between lhs point and rhs point
 .RE
 .PP
 
-.SS "auto programmers::geometry::Point2D::GetX () const \->  double"
+.PP
+Definition at line 24 of file point2d\&.cpp\&.
+.SS "auto programmers::geometry::Point2D::GetX () const \-> double"
 
 .PP
 Get x coordinate value of this point\&. 
@@ -198,7 +204,9 @@ double x coordinate value of this point
 .RE
 .PP
 
-.SS "auto programmers::geometry::Point2D::GetY () const \->  double"
+.PP
+Definition at line 30 of file point2d\&.cpp\&.
+.SS "auto programmers::geometry::Point2D::GetY () const \-> double"
 
 .PP
 Get y coordinate value of this point\&. 
@@ -209,6 +217,8 @@ double y coordinate value of this point
 .RE
 .PP
 
+.PP
+Definition at line 32 of file point2d\&.cpp\&.
 .SS "auto programmers::geometry::Point2D::operator!= (const \fBPoint2D\fP & other) const \->  bool"
 
 .PP
@@ -373,7 +383,7 @@ false otherwise
 .RE
 .PP
 
-.SS "void programmers::geometry::Point2D::SetX (double x)"
+.SS "auto programmers::geometry::Point2D::SetX (double x)"
 
 .PP
 Set x coordinate value\&. 
@@ -384,7 +394,9 @@ Set x coordinate value\&.
 .RE
 .PP
 
-.SS "void programmers::geometry::Point2D::SetY (double y)"
+.PP
+Definition at line 34 of file point2d\&.cpp\&.
+.SS "auto programmers::geometry::Point2D::SetY (double y)"
 
 .PP
 Set y coordinate value\&. 
@@ -395,6 +407,8 @@ Set y coordinate value\&.
 .RE
 .PP
 
+.PP
+Definition at line 36 of file point2d\&.cpp\&.
 
 .SH "Author"
 .PP 

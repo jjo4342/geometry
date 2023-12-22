@@ -1,4 +1,7 @@
 var annotated_dup =
 [
-    [ "programmers", "namespaceprogrammers.html", "namespaceprogrammers" ]
+    [ "holyground", "namespaceholyground.html", "namespaceholyground" ],
+    [ "programmers", "namespaceprogrammers.html", "namespaceprogrammers" ],
+    [ "std", "namespacestd.html", "namespacestd" ],
+    [ "testing", "namespacetesting.html", "namespacetesting" ]
 ];

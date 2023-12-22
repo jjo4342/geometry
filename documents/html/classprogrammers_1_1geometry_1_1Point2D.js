@@ -18,6 +18,6 @@ var classprogrammers_1_1geometry_1_1Point2D =
     [ "operator=", "classprogrammers_1_1geometry_1_1Point2D.html#a1ccae7f5bd4db986140bf7566f3939c5", null ],
     [ "operator=", "classprogrammers_1_1geometry_1_1Point2D.html#ac5ceadc06a745b1189fceff65eda53b0", null ],
     [ "operator==", "classprogrammers_1_1geometry_1_1Point2D.html#a901c0de565aba1fd759ea5d3badcf318", null ],
-    [ "SetX", "classprogrammers_1_1geometry_1_1Point2D.html#ac9bf761fd09d5c29459db2b2aa3379e1", null ],
-    [ "SetY", "classprogrammers_1_1geometry_1_1Point2D.html#aacd2306ed57634d39f22c41f760d95a4", null ]
+    [ "SetX", "classprogrammers_1_1geometry_1_1Point2D.html#a1bf5f23afe2acf9056a214d0b2a22c8b", null ],
+    [ "SetY", "classprogrammers_1_1geometry_1_1Point2D.html#a68ed3a3ad874d10ec4a8297eeda2b6bd", null ]
 ];
