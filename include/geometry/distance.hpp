@@ -108,10 +108,10 @@ class Distance {
   auto operator-(const Distance& other) const -> Distance;
   auto operator*(double scale) const -> Distance;
   auto operator/(double scale) const -> Distance;
-  auto operator+=(const Distance& other) const -> void;
-  auto operator-=(const Distance& other) const -> void;
-  auto operator*=(double scale) const -> void;
-  auto operator/=(double scale) const -> void;
+  auto operator+=(const Distance& other) -> void;
+  auto operator-=(const Distance& other) -> void;
+  auto operator*=(double scale) -> void;
+  auto operator/=(double scale) -> void;
 
  protected:
  private:

@@ -76,8 +76,62 @@ auto Distance::operator==(const Distance &other) const -> bool {
   return (nanometer_ == other.nanometer_);
 }
 
+auto Distance::operator!=(const Distance &other) const -> bool {
+  return (nanometer_ != other.nanometer_);
+}
+
+auto Distance::operator<(const Distance &other) const -> bool {
+  return (nanometer_ < other.nanometer_);
+}
+
+auto Distance::operator<=(const Distance &other) const -> bool {
+  return (nanometer_ <= other.nanometer_);
+}
+
+auto Distance::operator>(const Distance &other) const -> bool {
+  return (nanometer_ > other.nanometer_);
+}
+
+auto Distance::operator>=(const Distance &other) const -> bool {
+  return (nanometer_ >= other.nanometer_);
+}
+
 auto Distance::operator+(const Distance &other) const -> Distance {
   return Distance(static_cast<double>(nanometer_ + other.nanometer_),
                   Type::kNanometer);
 }
+
+auto Distance::operator-(const Distance &other) const -> Distance {
+  return Distance(static_cast<double>(nanometer_ - other.nanometer_),
+                  Type::kNanometer);
+}
+
+auto Distance::operator*(double scale) const -> Distance {
+  return Distance(static_cast<double>(nanometer_ * scale),
+                  Type::kNanometer);
+}
+
+auto Distance::operator/(double scale) const -> Distance {
+  return Distance(static_cast<double>(nanometer_ / scale),
+                  Type::kNanometer);
+                  //  nanometer_ == 0 case
+}
+
+auto Distance::operator+=(const Distance &other) -> void {
+  nanometer_ += other.nanometer_;
+}
+
+auto Distance::operator-=(const Distance &other) -> void {
+  nanometer_ -= other.nanometer_;
+}
+
+auto Distance::operator*=(double scale) -> void {
+  nanometer_ *= scale;
+}
+
+auto Distance::operator/=(double scale) -> void {
+  nanometer_ /= scale;
+  // scale == 0 case
+}
+
 }  // namespace programmers::geometry
