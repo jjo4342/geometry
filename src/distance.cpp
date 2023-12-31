@@ -13,6 +13,7 @@
 #include "geometry/distance.hpp"
 
 #include <cstdint>
+#include <iostream>
 #include <tuple>
 
 namespace {
@@ -114,7 +115,6 @@ auto Distance::operator*(double scale) const -> Distance {
 auto Distance::operator/(double scale) const -> Distance {
   return Distance(static_cast<double>(nanometer_ / scale),
                   Type::kNanometer);
-                  //  nanometer_ == 0 case
 }
 
 auto Distance::operator+=(const Distance &other) -> void {

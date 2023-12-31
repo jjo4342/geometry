@@ -171,5 +171,136 @@ TEST(GeometryDistance, OperatorAdd) {
   EXPECT_DOUBLE_EQ(Distance3.GetValue(Distance::Type::kKilometer),
                    KInputValue * 2.0);
 }
+TEST(GeometryDistance, OperatorSubtract) {
+  const auto KInputValue = static_cast<double>(2038.0);
+  Distance distance_by_kilo(KInputValue, Distance::Type::kKilometer);
+  Distance distance(KInputValue * 1.0e+3, Distance::Type::kMeter);
+  Distance distance_by_nano(KInputValue * 1.0e+12, Distance::Type::kNanometer);
+
+  const auto Distance1 = distance_by_kilo - distance;
+  const auto Distance2 = distance_by_kilo - distance_by_nano;
+  const auto Distance3 = distance - distance_by_nano;
+
+  EXPECT_DOUBLE_EQ(Distance1.GetValue(Distance::Type::kKilometer),
+                   KInputValue * 0.0);
+  EXPECT_DOUBLE_EQ(Distance2.GetValue(Distance::Type::kKilometer),
+                   KInputValue * 0.0);
+  EXPECT_DOUBLE_EQ(Distance3.GetValue(Distance::Type::kKilometer),
+                   KInputValue * 0.0);
+}
+TEST(GeometryDistance, OperatorMultiply) {
+  const auto KInputValue = static_cast<double>(2038.0);
+  Distance distance_by_kilo(KInputValue, Distance::Type::kKilometer);
+  Distance distance(KInputValue * 1.0e+3, Distance::Type::kMeter);
+  Distance distance_by_nano(KInputValue * 1.0e+12, Distance::Type::kNanometer);
+
+  const auto Distance1 = distance_by_kilo * 2.0;
+  const auto Distance2 = distance * 2.0;
+  const auto Distance3 = distance_by_nano * 0.5;
+
+  EXPECT_DOUBLE_EQ(Distance1.GetValue(Distance::Type::kKilometer),
+                   KInputValue * 2.0);
+  EXPECT_DOUBLE_EQ(Distance2.GetValue(Distance::Type::kKilometer),
+                   KInputValue * 2.0);
+  EXPECT_DOUBLE_EQ(Distance3.GetValue(Distance::Type::kKilometer),
+                   KInputValue * 0.5);
+}
+TEST(GeometryDistance, OperatorDivide) {
+  const auto KInputValue = static_cast<double>(2038.0);
+  Distance distance_by_kilo(KInputValue, Distance::Type::kKilometer);
+  Distance distance(KInputValue * 1.0e+3, Distance::Type::kMeter);
+  Distance distance_by_nano(KInputValue * 1.0e+12, Distance::Type::kNanometer);
+
+  const auto Distance1 = distance_by_kilo / 2.0;
+  const auto Distance2 = distance / 2.0;
+  const auto Distance3 = distance_by_nano / 0.5;
+
+  EXPECT_DOUBLE_EQ(Distance1.GetValue(Distance::Type::kKilometer),
+                   KInputValue / 2.0);
+  EXPECT_DOUBLE_EQ(Distance2.GetValue(Distance::Type::kKilometer),
+                   KInputValue / 2.0);
+  EXPECT_DOUBLE_EQ(Distance3.GetValue(Distance::Type::kKilometer),
+                   KInputValue / 0.5);
+}
+TEST(GeometryDistance, OperatorAddEqual) {
+  const auto KInputValue = static_cast<double>(2038.0);
+  Distance distance_by_kilo(KInputValue, Distance::Type::kKilometer);
+  Distance distance(KInputValue * 1.0e+3, Distance::Type::kMeter);
+  Distance distance_by_nano(KInputValue * 1.0e+12, Distance::Type::kNanometer);
+
+  Distance distance1 = distance_by_kilo;
+  distance1 += distance;
+  Distance distance2 = distance_by_kilo;
+  distance2 += distance_by_nano;
+  Distance distance3 = distance;
+  distance3 += distance_by_nano;
+
+  EXPECT_DOUBLE_EQ(distance1.GetValue(Distance::Type::kKilometer),
+                   KInputValue * 2.0);
+  EXPECT_DOUBLE_EQ(distance2.GetValue(Distance::Type::kKilometer),
+                   KInputValue * 2.0);
+  EXPECT_DOUBLE_EQ(distance3.GetValue(Distance::Type::kKilometer),
+                   KInputValue * 2.0);
+}
+TEST(GeometryDistance, OperatorSubtrackEqual) {
+  const auto KInputValue = static_cast<double>(2038.0);
+  Distance distance_by_kilo(KInputValue, Distance::Type::kKilometer);
+  Distance distance(KInputValue * 1.0e+3, Distance::Type::kMeter);
+  Distance distance_by_nano(KInputValue * 1.0e+12, Distance::Type::kNanometer);
+
+  Distance distance1 = distance_by_kilo;
+  distance1 -= distance;
+  Distance distance2 = distance_by_kilo;
+  distance2 -= distance_by_nano;
+  Distance distance3 = distance;
+  distance3 -= distance_by_nano;
+
+  EXPECT_DOUBLE_EQ(distance1.GetValue(Distance::Type::kKilometer),
+                   KInputValue * 0.0);
+  EXPECT_DOUBLE_EQ(distance2.GetValue(Distance::Type::kKilometer),
+                   KInputValue * 0.0);
+  EXPECT_DOUBLE_EQ(distance3.GetValue(Distance::Type::kKilometer),
+                   KInputValue * 0.0);
+}
+TEST(GeometryDistance, OperatorMultiflyEqual) {
+  const auto KInputValue = static_cast<double>(2038.0);
+  Distance distance_by_kilo(KInputValue, Distance::Type::kKilometer);
+  Distance distance(KInputValue * 1.0e+3, Distance::Type::kMeter);
+  Distance distance_by_nano(KInputValue * 1.0e+12, Distance::Type::kNanometer);
+
+  Distance distance1 = distance_by_kilo;
+  distance1 *= 2.0;
+  Distance distance2 = distance;
+  distance2 *= 1.5;
+  Distance distance3 = distance_by_nano;
+  distance3 *= 0.5;
+
+  EXPECT_DOUBLE_EQ(distance1.GetValue(Distance::Type::kKilometer),
+                   KInputValue * 2.0);
+  EXPECT_DOUBLE_EQ(distance2.GetValue(Distance::Type::kKilometer),
+                   KInputValue * 1.5);
+  EXPECT_DOUBLE_EQ(distance3.GetValue(Distance::Type::kKilometer),
+                   KInputValue * 0.5);
+}
+TEST(GeometryDistance, OperatorDevideEqual) {
+  const auto KInputValue = static_cast<double>(2038.0);
+  Distance distance_by_kilo(KInputValue, Distance::Type::kKilometer);
+  Distance distance(KInputValue * 1.0e+3, Distance::Type::kMeter);
+  Distance distance_by_nano(KInputValue * 1.0e+12, Distance::Type::kNanometer);
+
+  Distance distance1 = distance_by_kilo;
+  distance1 /= 2.0;
+  Distance distance2 = distance;
+  distance2 /= 1.5;
+  Distance distance3 = distance_by_nano;
+  distance3 /= 0.5;
+
+  EXPECT_DOUBLE_EQ(distance1.GetValue(Distance::Type::kKilometer),
+                   KInputValue / 2.0);
+  EXPECT_DOUBLE_EQ(distance2.GetValue(Distance::Type::kKilometer),
+                   KInputValue / 1.5);
+  EXPECT_DOUBLE_EQ(distance3.GetValue(Distance::Type::kKilometer),
+                   KInputValue / 0.5);
+}
 
 }  // namespace programmers::geometry

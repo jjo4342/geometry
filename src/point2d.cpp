@@ -1,14 +1,14 @@
 /**
  * @file geometry/src/point2d.cpp
- * @author EunSung Yang (seong9115@gmail.com)
+ * @author Juyeong Jang
  * @brief Point class developments with 2-dimension
  * @version 1.0.0
- * @date 2023-12-20
- * @copyright Copyright (c) 2023 HolyGround, All Rights Reserved.
+ * @date 2023-12-31
+ * @copyright Copyright (c) 2023 Juyeong Jang, All Rights Reserved.
  */
 
-// Copyright (c) 2023 HolyGround, All Rights Reserved.
-// Authors: EunSung Yang
+// Copyright (c) 2023 Juyeong Jang, All Rights Reserved.
+// Authors: Juyeong Jang
 
 #include "geometry/point2d.hpp"
 
@@ -34,4 +34,4 @@ auto Point2D::GetY() const -> double { return y_; }
 auto Point2D::SetX(double input_x) -> void { x_ = input_x; }
 
 auto Point2D::SetY(double input_y) -> void { y_ = input_y; }
-}  // namespace holyground::geometry
+}  // namespace programmers::geometry
