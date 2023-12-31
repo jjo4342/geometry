@@ -103,6 +103,56 @@ TEST(GeometryDistance, OperatorEqual) {
   EXPECT_TRUE(distance_by_kilo == distance_by_nano);
   EXPECT_TRUE(distance == distance_by_nano);
 }
+TEST(GeometryDistance, OperatorNotEqual) {
+  const auto KInputValue = static_cast<double>(2038.0);
+  Distance distance_by_kilo(KInputValue, Distance::Type::kKilometer);
+  Distance distance(KInputValue * 1.0e+3, Distance::Type::kMillimeter);
+  Distance distance_by_nano(KInputValue * 1.0e+11, Distance::Type::kNanometer);
+
+  EXPECT_TRUE(distance_by_kilo != distance);
+  EXPECT_TRUE(distance_by_kilo != distance_by_nano);
+  EXPECT_TRUE(distance != distance_by_nano);
+}
+TEST(GeometryDistance, OperatorLess) {
+  const auto KInputValue = static_cast<double>(2038.0);
+  Distance distance_by_kilo(KInputValue, Distance::Type::kKilometer);
+  Distance distance(KInputValue * 1.0e+4, Distance::Type::kMeter);
+  Distance distance_by_nano(KInputValue * 1.0e+15, Distance::Type::kNanometer);
+
+  EXPECT_TRUE(distance_by_kilo < distance);
+  EXPECT_TRUE(distance_by_kilo < distance_by_nano);
+  EXPECT_TRUE(distance < distance_by_nano);
+}
+TEST(GeometryDistance, OperatorLessOrEqual) {
+  const auto KInputValue = static_cast<double>(2038.0);
+  Distance distance_by_kilo(KInputValue, Distance::Type::kKilometer);
+  Distance distance(KInputValue * 1.0e+3, Distance::Type::kMeter);
+  Distance distance_by_nano(KInputValue * 1.0e+15, Distance::Type::kNanometer);
+
+  EXPECT_TRUE(distance_by_kilo <= distance);
+  EXPECT_TRUE(distance_by_kilo <= distance_by_nano);
+  EXPECT_TRUE(distance <= distance_by_nano);
+}
+TEST(GeometryDistance, OperatorGreater) {
+  const auto KInputValue = static_cast<double>(2038.0);
+  Distance distance_by_kilo(KInputValue, Distance::Type::kKilometer);
+  Distance distance(KInputValue * 1.0e+2, Distance::Type::kMeter);
+  Distance distance_by_nano(KInputValue * 1.0e+10, Distance::Type::kNanometer);
+
+  EXPECT_TRUE(distance_by_kilo > distance);
+  EXPECT_TRUE(distance_by_kilo > distance_by_nano);
+  EXPECT_TRUE(distance > distance_by_nano);
+}
+TEST(GeometryDistance, OperatorGreaterOrEqual) {
+  const auto KInputValue = static_cast<double>(2038.0);
+  Distance distance_by_kilo(KInputValue, Distance::Type::kKilometer);
+  Distance distance(KInputValue * 1.0e+3, Distance::Type::kMeter);
+  Distance distance_by_nano(KInputValue * 1.0e+11, Distance::Type::kNanometer);
+
+  EXPECT_TRUE(distance_by_kilo >= distance);
+  EXPECT_TRUE(distance_by_kilo >= distance_by_nano);
+  EXPECT_TRUE(distance >= distance_by_nano);
+}
 
 TEST(GeometryDistance, OperatorAdd) {
   const auto KInputValue = static_cast<double>(2038.0);
