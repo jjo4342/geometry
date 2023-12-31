@@ -1,5 +1,5 @@
-// Copyright (c) 2023 HolyGround, All Rights Reserved.
-// Authors: EunSung Yang
+// Copyright (c) 2023 Juyeong Jang, All Rights Reserved.
+// Authors:  Juyeong Jang
 
 #include "geometry/distance.hpp"
 
@@ -7,7 +7,7 @@
 namespace {
 constexpr uint32_t kTestCount = 1000U;
 }  // namespace
-namespace holyground::geometry {
+namespace programmers::geometry {
 
 TEST(GeometryDistance, Constructor) {
   Distance distance1;

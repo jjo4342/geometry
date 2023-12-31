@@ -1,14 +1,14 @@
 /**
  * @file geometry/src/distance.cpp
- * @author EunSung Yang (seong9115@gmail.com)
+ * @author Juyeong Jang
  * @brief Distance class implementation for abstract distance
  * @version 1.0.0
- * @date 2023-12-22
- * @copyright Copyright (c) 2023 HolyGround, All Rights Reserved.
+ * @date 2023-12-31
+ * @copyright Copyright (c) 2023 Juyeong Jang, All Rights Reserved.
  */
 
-// Copyright (c) 2023 HolyGround, All Rights Reserved.
-// Authors: EunSung Yang
+// Copyright (c) 2023 Juyeong Jang, All Rights Reserved.
+// Authors: Juyeong Jang
 
 #include "geometry/distance.hpp"
 
@@ -29,40 +29,40 @@ constexpr double kNanometerToMillimeter{1.0e-6};
 constexpr double kNanometerToMicrometer{1.0e-3};
 
 auto ScaleDistanceToNanometer(double input_value,
-                              holyground::geometry::Distance::Type input_type)
+                              programmers::geometry::Distance::Type input_type)
     -> int64_t {
   int64_t result{static_cast<int64_t>(input_value)};
-  if (input_type == holyground::geometry::Distance::Type::kKilometer) {
+  if (input_type == programmers::geometry::Distance::Type::kKilometer) {
     result = static_cast<int64_t>(input_value * kKilometerToNanometer);
-  } else if (input_type == holyground::geometry::Distance::Type::kMeter) {
+  } else if (input_type == programmers::geometry::Distance::Type::kMeter) {
     result = static_cast<int64_t>(input_value * kMeterToNanometer);
-  } else if (input_type == holyground::geometry::Distance::Type::kCentimeter) {
+  } else if (input_type == programmers::geometry::Distance::Type::kCentimeter) {
     result = static_cast<int64_t>(input_value * kCentimeterToNanometer);
-  } else if (input_type == holyground::geometry::Distance::Type::kMillimeter) {
+  } else if (input_type == programmers::geometry::Distance::Type::kMillimeter) {
     result = static_cast<int64_t>(input_value * kMillimeterToNanometer);
-  } else if (input_type == holyground::geometry::Distance::Type::kMicrometer) {
+  } else if (input_type == programmers::geometry::Distance::Type::kMicrometer) {
     result = static_cast<int64_t>(input_value * kMicrometerToNanometer);
   }
   return result;
 }
 }  // namespace
 
-namespace holyground::geometry {
+namespace programmers::geometry {
 
 Distance::Distance(double input_value, Type input_type)
     : nanometer_(ScaleDistanceToNanometer(input_value, input_type)) {}
 
 auto Distance::GetValue(const Type &input_type) const -> double {
   auto result{static_cast<double>(nanometer_)};
-  if (input_type == holyground::geometry::Distance::Type::kKilometer) {
+  if (input_type == programmers::geometry::Distance::Type::kKilometer) {
     result = result * kNanometerToKilometer;
-  } else if (input_type == holyground::geometry::Distance::Type::kMeter) {
+  } else if (input_type == programmers::geometry::Distance::Type::kMeter) {
     result = result * kNanometerToMeter;
-  } else if (input_type == holyground::geometry::Distance::Type::kCentimeter) {
+  } else if (input_type == programmers::geometry::Distance::Type::kCentimeter) {
     result = result * kNanometerToCentimeter;
-  } else if (input_type == holyground::geometry::Distance::Type::kMillimeter) {
+  } else if (input_type == programmers::geometry::Distance::Type::kMillimeter) {
     result = result * kNanometerToMillimeter;
-  } else if (input_type == holyground::geometry::Distance::Type::kMicrometer) {
+  } else if (input_type == programmers::geometry::Distance::Type::kMicrometer) {
     result = result * kNanometerToMicrometer;
   }
   return result;
@@ -80,4 +80,4 @@ auto Distance::operator+(const Distance &other) const -> Distance {
   return Distance(static_cast<double>(nanometer_ + other.nanometer_),
                   Type::kNanometer);
 }
-}  // namespace holyground::geometry
+}  // namespace programmers::geometry

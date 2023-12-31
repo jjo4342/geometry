@@ -1,21 +1,21 @@
 /**
  * @file geometry/distance.hpp
- * @author EunSung Yang (seong9115@gmail.com)
+ * @author  Juyeong Jang
  * @brief Distance class declaration for abstract distance
  * @version 1.0.0
- * @date 2023-12-22
- * @copyright Copyright (c) 2023 HolyGround, All Rights Reserved.
+ * @date 2023-12-31
+ * @copyright Copyright (c) 2023 Juyeong Jang, All Rights Reserved.
  */
 
-// Copyright (c) 2023 HolyGround, All Rights Reserved.
-// Authors: EunSung Yang
+// Copyright (c) 2023 Juyeong Jang, All Rights Reserved.
+// Authors: Juyeong Jang
 
-#ifndef HOLYGROUND__GEOMETRY__DISTANCE_HPP_
-#define HOLYGROUND__GEOMETRY__DISTANCE_HPP_
+#ifndef PROGRAMMERS__GEOMETRY__DISTANCE_HPP_
+#define PROGRAMMERS__GEOMETRY__DISTANCE_HPP_
 
 #include <cstdint>
 
-namespace holyground::geometry {
+namespace programmers::geometry {
 /**
  * @brief The class for abstract distance
  */
@@ -118,6 +118,6 @@ class Distance {
   int64_t nanometer_{0};  ///< Nanometer
 };
 
-}  // namespace holyground::geometry
+}  // namespace programmers::geometry
 
-#endif  // HOLYGROUND__GEOMETRY__DISTANCE_HPP_
+#endif  // PROGRAMMERS__GEOMETRY__DISTANCE_HPP_
