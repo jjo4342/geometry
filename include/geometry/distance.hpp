@@ -91,11 +91,40 @@ class Distance {
    * @return false If not equal.
    */
   auto operator==(const Distance& other) const -> bool;
-
+  /**
+   * @brief Compare with other distance object for NOT equality.
+   * @param other The other distance object.
+   * @return false If equal.
+   * @return true If not equal.
+   */
   auto operator!=(const Distance& other) const -> bool;
+  /**
+   * @brief Compare with other distance object for less than.
+   * @param other The other distance object.
+   * @return true If less than.
+   * @return false If not less than.
+   */
   auto operator<(const Distance& other) const -> bool;
+  /**
+   * @brief Compare with other distance object for less than or equal to.
+   * @param other The other distance object.
+   * @return true If less than or equal.
+   * @return false If not less than or equal.
+   */
   auto operator<=(const Distance& other) const -> bool;
+  /**
+   * @brief Compare with other distance object for greater than.
+   * @param other The other distance object.
+   * @return true If greater than.
+   * @return false If not greater than.
+   */
   auto operator>(const Distance& other) const -> bool;
+  /**
+   * @brief Compare with other distance object for greater than or equal to.
+   * @param other The other distance object.
+   * @return true If greater than or equal.
+   * @return false If not greater than or equal.
+   */
   auto operator>=(const Distance& other) const -> bool;
 
   /**
@@ -104,13 +133,47 @@ class Distance {
    * @return Distance The result of addition.
    */
   auto operator+(const Distance& other) const -> Distance;
-
+  /**
+   * @brief Subtract other distance object.
+   * @param other The other distance object.
+   * @return Distance The result of subtraction.
+   */
   auto operator-(const Distance& other) const -> Distance;
+  /**
+   * @brief Multiply by a scale factor.
+   * @param scale The scaling factor.
+   * @return Distance The result of multiplication.
+   */
   auto operator*(double scale) const -> Distance;
+  /**
+   * @brief Divide by a scale factor.
+   * @param scale The scaling factor.
+   * @return Distance The result of division.
+   */
   auto operator/(double scale) const -> Distance;
+  /**
+   * @brief Add another distance object to the current object.
+   * @param other The other distance object.
+   * @return Distance& Reference to the current object after addition.
+   */
   auto operator+=(const Distance& other) -> void;
+  /**
+   * @brief Subtract another distance object from the current object.
+   * @param other The other distance object.
+   * @return Distance& Reference to the current object after subtraction.
+   */
   auto operator-=(const Distance& other) -> void;
+  /**
+   * @brief Multiply the current object by a scale factor.
+   * @param scale The scaling factor.
+   * @return Distance& Reference to the current object after multiplication.
+   */
   auto operator*=(double scale) -> void;
+  /**
+   * @brief Divide the current object by a scale factor.
+   * @param scale The scaling factor.
+   * @return Distance& Reference to the current object after division.
+   */
   auto operator/=(double scale) -> void;
 
  protected:

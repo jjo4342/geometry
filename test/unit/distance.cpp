@@ -121,4 +121,5 @@ TEST(GeometryDistance, OperatorAdd) {
   EXPECT_DOUBLE_EQ(Distance3.GetValue(Distance::Type::kKilometer),
                    KInputValue * 2.0);
 }
+
 }  // namespace programmers::geometry
